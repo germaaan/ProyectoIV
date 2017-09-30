@@ -1,7 +1,5 @@
 # content of test_sample.py
 
-import
-
 def inc(x):
     return x + 1
 
