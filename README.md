@@ -5,8 +5,8 @@ Este proyecto va a consitir en un servicio en el cual hay una serie de vulnerabi
 
 ## Servicios necesarios
 
-    Lenguaje: GoLang
-    Base datos: MondoDB
+    Lenguaje: Python 3.4
+    Base datos: MongoDB
     Test de integración: TravisCI
 
 
