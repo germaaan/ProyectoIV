@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ainokila/ProyectoIV.svg?branch=master)](https://travis-ci.org/ainokila/ProyectoIV)
+
 # Información del proyecto
 ## Descripción del proyecto
 
