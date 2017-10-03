@@ -1,10 +1,5 @@
 import json
 
-
-def compareJson(a,b):
-    return sorted(a.items()) == sorted(b.items())
-
-
 class CVE_Details():
 
     #Datos a almacenar idCVE, version_afectada, nivel, enlace
@@ -18,7 +13,7 @@ class CVE_Details():
         #print(self.data)
 
     def alter(self,alter):
-        self.data[alter["id"]] = nuevo
+        self.data[alter["id"]] = alter
         #print(self.data)
 
     def eraseById(self,erase):
@@ -29,10 +24,16 @@ class CVE_Details():
         del self.data[id]
         #print(self.data)
 
-    def getById(self,data):
-        return self.data[data]
+    def getById(self,id):
+        if(id in self.data):
+            return self.data[id]
+        else:
+            return None
 
-    
+
+    def compareData(self,b):
+        return sorted(self.data.items()) == sorted(b.items())
+
 
 if __name__ == '__main__':
 
