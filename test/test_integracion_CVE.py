@@ -46,9 +46,13 @@ def test_borrar():
 
 
 class TestTravisCVE(unittest.TestCase):
-    def testEjercicio1(self):
+    def testCrearCVE(self):
         self.assertTrue(test_crear())
+
+    def testAlterarCVE(self):
         self.assertTrue(test_alterar())
+
+    def testBorrarCVE(self):
         self.assertTrue(test_borrar())
 
 if __name__ == '__main__':
