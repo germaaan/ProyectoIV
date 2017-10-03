@@ -13,3 +13,7 @@ Este proyecto va a consitir en un servicio en el cual hay una serie de vulnerabi
 
 
 Repositorio para el proyecto de la asignatura Infrastructura Virtual 2017-2018.
+
+## Instalacion de pytest
+
+        sudo apt install python-logilab-common
