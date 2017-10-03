@@ -1,9 +1,9 @@
 import unittest
 import json
 import sys
-sys.path.insert(0, '../')
+sys.path.insert(0, './src')
 
-from src.cve import CVE_Details
+from cve import CVE_Details
 
 
 def comparaJson(a,b):
