@@ -27,7 +27,7 @@ class Insert(Resource):
 
         id = colection.insert(data)
 
-        return "{"ID":id}"
+        return {"id":id}
 
     def get(self):
         #col.insert({"prueba":"ok"})
@@ -39,7 +39,7 @@ class Insert(Resource):
 
         id = colection.insert(data)
 
-        return "{"ID":id}"
+        return {"id":id}
 
 
 
