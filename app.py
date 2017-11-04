@@ -13,8 +13,7 @@ api = Api(app)
 uri = "mongodb://usuario:password@ds145370.mlab.com:45370/heroku_skjh356f"
 client = MongoClient(uri)
 
-
-db = client['vuln']
+cve = db.vuln
 
 
 #Manejador de insertar datos en la bbdd
@@ -23,7 +22,7 @@ class Insert(Resource):
 
         return "Inserto_datos_en_bbdd"
     def get(self):
-        db.insert({"name":"pepe"})
+        cve.insert({"name":"pepe"})
         return "Inserto_datos_en_bb"
 
 
