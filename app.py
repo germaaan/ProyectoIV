@@ -32,7 +32,7 @@ class Insert(Resource):
         except ValueError:
             json_line = "error"
 
-        return {"id":json_line}
+        return data
 
     def get(self):
         #col.insert({"prueba":"ok"})
