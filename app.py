@@ -25,9 +25,9 @@ class Insert(Resource):
         data = request.data
         #dataDict = json.loads(data)
 
-        id = colection.insert(loads(data))
+        colection.insert(loads(data))
 
-        return {"data_id":id}
+        return loads(data)
 
     def get(self):
         #col.insert({"prueba":"ok"})
