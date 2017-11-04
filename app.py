@@ -27,7 +27,7 @@ class Insert(Resource):
 
         colection.insert(loads(data))
 
-        return dataDict
+        return loads(data)
 
     def get(self):
         #col.insert({"prueba":"ok"})
