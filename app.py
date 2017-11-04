@@ -26,10 +26,9 @@ class Insert(Resource):
         args = parser.parse_args()
         data = args.get('data')
 
-        d = json.loads(data)
-        id = colection.insert(d)
+        #id = colection.insert(d)
 
-        return {"res":id}
+        return {"datos":data}
 
     def get(self):
         #col.insert({"prueba":"ok"})
