@@ -1,13 +1,6 @@
 import unittest
 import json
-import sys
-sys.path.insert(0, './src')
 
-from cve import CVE_Details
-
-
-def comparaJson(a,b):
-    return sorted(a.items()) == sorted(b.items())
 
 def test_crear():
     return True
