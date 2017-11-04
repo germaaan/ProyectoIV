@@ -1,7 +1,7 @@
 #!flask/bin/python3
 # -*- coding: utf-8 -*-
 
-from flask import Flask
+from flask import Flask,request
 from flask_restful import Resource,Api
 from flask_pymongo import PyMongo,MongoClient
 
@@ -23,7 +23,7 @@ class Insert(Resource):
         return "Inserto_datos_en_bbdd"
     def get(self):
         #col.insert({"prueba":"ok"})
-        return "Inserto_datos_en_bbdd"
+        return request.data
 
 
 
@@ -33,7 +33,7 @@ class Search(Resource):
     def get(self, servicio,version):
         #Aqui buscar info  sobre el servicio y su version en BBDD
         #data = search(servicio,version)
-        return "Buscando"
+        return
 
 
 
@@ -56,7 +56,7 @@ class Test(Resource):
 
 
 
-api.add_resource(Search, '/api/<string:servicio>/<string:version>')
+api.add_resource(Search, '/api/search/<string:servicio>/<string:version>')
 api.add_resource(Insert, '/api/insert')
 api.add_resource(Update, '/api/update')
 api.add_resource(Test, '/')
