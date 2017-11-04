@@ -4,6 +4,7 @@
 from flask import Flask,request
 from flask_restful import Resource,Api,reqparse
 from flask_pymongo import PyMongo,MongoClient
+import json
 
 
 app = Flask(__name__)
@@ -25,7 +26,11 @@ class Insert(Resource):
         args = parser.parse_args()
         data = args.get('data')
 
-        id = colection.insert(data)
+        try:
+            json_line = json.loads(data)
+            id = colection.insert(json_line)
+        except ValueError:
+            id = "error"
 
         return {"id":id}
 
@@ -37,7 +42,11 @@ class Insert(Resource):
         args = parser.parse_args()
         data = args.get('data')
 
-        id = colection.insert(data)
+        try:
+            json_line = json.loads(data)
+            id = colection.insert(json_line)
+        except ValueError:
+            id = "error"
 
         return {"id":id}
 
