@@ -27,8 +27,7 @@ class Insert(Resource):
         data = args.get('data')
 
         try:
-            json_line = json.loads(data)
-            id = colection.insert(json_line)
+            id = colection.insert(data)
         except ValueError:
             id = "error"
 
@@ -43,8 +42,7 @@ class Insert(Resource):
         data = args.get('data')
 
         try:
-            json_line = json.loads(data)
-            id = colection.insert(json_line)
+            id = colection.insert(data)
         except ValueError:
             id = "error"
 
