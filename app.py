@@ -22,7 +22,7 @@ class Insert(Resource):
 
         return "Inserto_datos_en_bbdd"
     def get(self):
-        cve.insert({"name":"pepe"})
+        client.vuln.insert({"name":"pepe"})
         return "Inserto_datos_en_bb"
 
 
