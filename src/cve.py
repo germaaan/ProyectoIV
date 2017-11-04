@@ -1,43 +1,17 @@
-import json
+from flask import Flask
+from datetime import datetime
+app = Flask(__name__)
 
-class CVE_Details():
+@app.route('/')
+def homepage():
+    the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
 
-    #Datos a almacenar idCVE, version_afectada, nivel, enlace
-    # json => {"id": "id_cve", "puntuacion": "point", "services": {"vendor": "vendor","product": "producto", "version": "version"}}
+    return """
+    <h1>Hello heroku</h1>
+    <p>It is currently {time}.</p>
 
-    def __init__(self):
-        self.data = {}
-
-    def new(self,nuevo):
-        self.data[nuevo["id"]] = nuevo
-        #print(self.data)
-
-    def alter(self,alter):
-        self.data[alter["id"]] = alter
-        #print(self.data)
-
-    def eraseById(self,erase):
-        del self.data[erase["id"]]
-        #print(self.data)
-
-    def erase(self,id):
-        del self.data[id]
-        #print(self.data)
-
-    def getById(self,id):
-        if(id in self.data):
-            return self.data[id]
-        else:
-            return None
-
-
-    def compareData(self,b):
-        return sorted(self.data.items()) == sorted(b.items())
-
+    <img src="http://loremflickr.com/600/400">
+    """.format(time=the_time)
 
 if __name__ == '__main__':
-
-    x = CVE_Details()
-    js = json.loads('{"id": "id_cve", "puntuacion": "point", "services": {"vendor": "vendor","product": "producto", "version": "version"}}')
-    x.new(js)
-    x.erase("id_cve")
+    app.run(debug=True, use_reloader=True)
