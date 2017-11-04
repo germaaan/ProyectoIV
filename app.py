@@ -25,9 +25,9 @@ class Insert(Resource):
         args = parser.parse_args()
         data = args.get('data')
 
-        colection.insert(data)
+        id = colection.insert(data)
 
-        return data
+        return "{"ID":id}"
 
     def get(self):
         #col.insert({"prueba":"ok"})
@@ -37,9 +37,9 @@ class Insert(Resource):
         args = parser.parse_args()
         data = args.get('data')
 
-        colection.insert(data)
+        id = colection.insert(data)
 
-        return data
+        return "{"ID":id}"
 
 
 
@@ -49,7 +49,7 @@ class Search(Resource):
     def get(self, servicio,version):
         #Aqui buscar info  sobre el servicio y su version en BBDD
         #data = search(servicio,version)
-        return
+        return "datos buscados"
 
 
 
