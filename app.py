@@ -33,7 +33,7 @@ class Search(Resource):
 
     def post(self, servicio,version):
         query = colection.find({'produc': servicio})
-        return query
+        return loads(query)
 
 
 #Manejador de actualizar la bbdd
