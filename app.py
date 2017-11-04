@@ -5,6 +5,7 @@ from flask import Flask,request
 from flask_restful import Resource,Api,reqparse,request
 from flask_pymongo import PyMongo,MongoClient
 import json
+from bson.json_util import loads
 
 
 app = Flask(__name__)
@@ -22,9 +23,9 @@ class Insert(Resource):
     def post(self):
 
         data = request.data
-        dataDict = json.loads(data)
+        #dataDict = json.loads(data)
 
-        colection.insert(dataDict)
+        colection.insert(loads(data))
 
         return dataDict
 
