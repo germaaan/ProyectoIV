@@ -19,8 +19,7 @@ class Insert(Resource):
 
         return "Inserto_datos_en_bbdd"
     def get(self):
-        client.vuln.insert({"name":"pepe"})
-        return "Inserto_datos_en_bb"
+        return client.vuln
 
 
 
