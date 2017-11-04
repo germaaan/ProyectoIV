@@ -20,11 +20,17 @@ col = db['vuln']
 class Insert(Resource):
     def post(self):
 
+        parser = reqparse.RequestParser()
+        parser.add_argument('cve')
         args = parser.parse_args()
+
         return print(args)
     def get(self):
         #col.insert({"prueba":"ok"})
+        parser = reqparse.RequestParser()
+        parser.add_argument('cve')
         args = parser.parse_args()
+        
         return print(args)
 
 
