@@ -21,17 +21,12 @@ colection = db['vuln']
 class Insert(Resource):
     def post(self):
 
-        """parser = reqparse.RequestParser()
-        parser.add_argument('data')
-        args = parser.parse_args()
-        data = args.get('data')"""
-
         data = request.data
-        dataDict = json.loads(data)
+        json = json.loads(data)
 
-        #id = colection.insert(d)
+        id = colection.insert(json)
 
-        return dataDict
+        return {"obj_id":id}
 
     def get(self):
         #col.insert({"prueba":"ok"})
