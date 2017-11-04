@@ -23,47 +23,24 @@ class Insert(Resource):
     def post(self):
 
         data = request.data
-        #dataDict = json.loads(data)
-
         colection.insert(loads(data))
 
         return loads(data)
-
-    def get(self):
-        #col.insert({"prueba":"ok"})
-
-        parser = reqparse.RequestParser()
-        parser.add_argument('data')
-        args = parser.parse_args()
-        data = args.get('data')
-
-        try:
-            json_line = json.loads(data)
-            id = colection.insert(json_line)
-        except ValueError:
-            id = "error"
-
-        return {"id":id}
-
 
 
 #Manejador de busqueda en BBDD
 class Search(Resource):
 
-    def get(self, servicio,version):
-        #Aqui buscar info  sobre el servicio y su version en BBDD
-        #data = search(servicio,version)
-        return "datos buscados"
-
-
+    def post(self, servicio,version):
+        query = colection.find({'produc': servicio})
+        return query
 
 
 #Manejador de actualizar la bbdd
 class Update(Resource):
     def post(self):
         return "Actualizo_toda_la_bbdd"
-    def get(self):
-        return "Actualizo_toda_la_bbdd"
+
 
 #Manejador de actualizar la bbdd
 class Test(Resource):
