@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask,request
-from flask_restful import Resource,Api,reqparse
+from flask_restful import Resource,Api,reqparse,request
 from flask_pymongo import PyMongo,MongoClient
 import json
 
@@ -21,10 +21,13 @@ colection = db['vuln']
 class Insert(Resource):
     def post(self):
 
-        parser = reqparse.RequestParser()
+        """parser = reqparse.RequestParser()
         parser.add_argument('data')
         args = parser.parse_args()
-        data = args.get('data')
+        data = args.get('data')"""
+
+        data = request.data
+        dataDict = json.loads(data)
 
         #id = colection.insert(d)
 
