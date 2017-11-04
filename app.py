@@ -14,7 +14,7 @@ uri = "mongodb://usuario:password@ds145370.mlab.com:45370/heroku_skjh356f"
 client = MongoClient(uri)
 
 
-db = client['heroku_skjh356f']
+db = client['vuln']
 
 
 #Manejador de insertar datos en la bbdd
