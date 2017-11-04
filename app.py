@@ -30,7 +30,7 @@ class Insert(Resource):
             json_line = json.loads(data)
             #id = colection.insert(json_line)
         except ValueError:
-            id = "error"
+            json_line = "error"
 
         return {"id":json_line}
 
