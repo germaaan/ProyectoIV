@@ -34,7 +34,7 @@ class Search(Resource):
 
     def post(self, servicio,version):
         query = colection.find({'product': servicio})
-        return dumps(query).replace("\","")
+        return dumps(query)
 
 
 #Manejador de actualizar la bbdd
