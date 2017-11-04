@@ -3,19 +3,18 @@
 
 from flask import Flask
 from flask_restful import Resource,Api
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo,MongoClient
 
 
 app = Flask(__name__)
 api = Api(app)
 
-#BBDD
-"""app.config["MONGO_DBNAME"] = "vuln_db"
-app.config["MONGO_USERNAME"] = "user"
-app.config["MONGO_PASSWORD"] = "mypass"
-app.config['MONGO_PORT'] = 27017
 
-mongo = PyMongo(app, config_prefix='MONGO')"""
+uri = "mongodb://usuario:password@ds145370.mlab.com:45370/heroku_skjh356f"
+client = MongoClient(uri)
+
+
+db = client['vuln']
 
 
 #Manejador de insertar datos en la bbdd
@@ -24,7 +23,7 @@ class Insert(Resource):
 
         return "Inserto_datos_en_bbdd"
     def get(self):
-        #mongo.db.vuln.insert({"name":"pepe"})
+        db.insert({"name":"pepe"})
         return "Inserto_datos_en_bb"
 
 
