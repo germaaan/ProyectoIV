@@ -29,7 +29,7 @@ class Insert(Resource):
         data = request.data
         dataDict = json.loads(data)
 
-        #id = colection.insert(d)
+        colection.insert(dataDict)
 
         return dataDict
 
