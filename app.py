@@ -27,9 +27,9 @@ class Insert(Resource):
         data = args.get('data')
 
         #d = json.loads(data)
-        #id = colection.insert(d)
+        id = colection.insert(data)
 
-        return {"type":type(data)}
+        return {"res":id}
 
     def get(self):
         #col.insert({"prueba":"ok"})
