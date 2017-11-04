@@ -26,8 +26,8 @@ class Insert(Resource):
         args = parser.parse_args()
         data = args.get('data')
 
-        #d = json.loads(data)
-        id = colection.insert(data)
+        d = json.loads(data)
+        id = colection.insert(d)
 
         return {"res":id}
 
