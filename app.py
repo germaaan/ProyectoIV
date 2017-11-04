@@ -22,7 +22,7 @@ class Insert(Resource):
 
         return "Inserto_datos_en_bbdd"
     def get(self):
-        col.insert({"prueba":"ok"})
+        #col.insert({"prueba":"ok"})
         return "Inserto_datos_en_bbdd"
 
 
