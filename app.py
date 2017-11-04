@@ -45,9 +45,9 @@ class Update(Resource):
 #Manejador de actualizar la bbdd
 class Test(Resource):
     def post(self):
-        return jsonify({"Status":"OK"})
+        return jsonify({"status":"OK"})
     def get(self):
-        return {"Status":"OK"}
+        return {"status":"OK"}
 
 
 
