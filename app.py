@@ -26,13 +26,9 @@ class Insert(Resource):
         args = parser.parse_args()
         data = args.get('data')
 
-        try:
-            json_line = json.loads(data)
-            #id = colection.insert(json_line)
-        except ValueError:
-            json_line = "error"
+        id = colection.insert(data)
 
-        return data
+        return {"id":id}
 
     def get(self):
         #col.insert({"prueba":"ok"})
