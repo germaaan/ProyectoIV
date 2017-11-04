@@ -21,7 +21,8 @@ class Insert(Resource):
 
         return "Inserto_datos_en_bbdd"
     def get(self):
-        return db
+        db.insert("prueba":"ok")
+        return "Inserto_datos_en_bbdd"
 
 
 
