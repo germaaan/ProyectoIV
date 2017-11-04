@@ -6,6 +6,7 @@ from flask_restful import Resource,Api,reqparse,request
 from flask_pymongo import PyMongo,MongoClient
 import json
 from bson.json_util import loads
+from bson.json_util import dumps
 
 
 app = Flask(__name__)
@@ -33,7 +34,7 @@ class Search(Resource):
 
     def post(self, servicio,version):
         query = colection.find({})
-        return loads(query)
+        return dumps(query)
 
 
 #Manejador de actualizar la bbdd
