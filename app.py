@@ -13,7 +13,7 @@ api = Api(app)
 uri = "mongodb://usuario:password@ds145370.mlab.com:45370/heroku_skjh356f"
 client = MongoClient(uri)
 db = client.heroku_skjh356f
-col = db['vuln']
+colection = db['vuln']
 
 
 #Manejador de insertar datos en la bbdd
@@ -21,17 +21,24 @@ class Insert(Resource):
     def post(self):
 
         parser = reqparse.RequestParser()
-        parser.add_argument('cve')
+        parser.add_argument('data')
         args = parser.parse_args()
-        data = args.get('cve')
+        data = args.get('data')
+
+        colection.insert(data)
+
         return data
 
     def get(self):
         #col.insert({"prueba":"ok"})
+
         parser = reqparse.RequestParser()
-        parser.add_argument('cve')
+        parser.add_argument('data')
         args = parser.parse_args()
-        data = args.get('cve')
+        data = args.get('data')
+
+        colection.insert(data)
+
         return data
 
 
