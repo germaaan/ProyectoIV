@@ -29,7 +29,7 @@ class Insert(Resource):
         data = request.data
         dataDict = json.loads(data)
 
-        colection.insert(dataDict)
+        colection.insert(jsonify(dataDict))
 
         return dataDict
 
