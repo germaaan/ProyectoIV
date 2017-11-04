@@ -24,15 +24,15 @@ class Insert(Resource):
         parser.add_argument('cve')
         args = parser.parse_args()
         data = args.get('cve')
-        return print(data)
-        
+        return data
+
     def get(self):
         #col.insert({"prueba":"ok"})
         parser = reqparse.RequestParser()
         parser.add_argument('cve')
         args = parser.parse_args()
         data = args.get('cve')
-        return print(data)
+        return data
 
 
 
