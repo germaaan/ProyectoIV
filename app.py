@@ -27,11 +27,12 @@ class Insert(Resource):
         data = args.get('data')
 
         try:
-            id = colection.insert(data)
+            json_line = json.loads(data)
+            #id = colection.insert(json_line)
         except ValueError:
             id = "error"
 
-        return {"id":id}
+        return {"id":json_line}
 
     def get(self):
         #col.insert({"prueba":"ok"})
@@ -42,7 +43,8 @@ class Insert(Resource):
         data = args.get('data')
 
         try:
-            id = colection.insert(data)
+            json_line = json.loads(data)
+            id = colection.insert(json_line)
         except ValueError:
             id = "error"
 
