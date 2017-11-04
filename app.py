@@ -29,7 +29,7 @@ class Insert(Resource):
         d = json.loads(data)
         #id = colection.insert(d)
 
-        return print(d)
+        return print(data)
 
     def get(self):
         #col.insert({"prueba":"ok"})
