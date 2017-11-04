@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask,request
-from flask_restful import Resource,Api
+from flask_restful import Resource,Api,reqparse
 from flask_pymongo import PyMongo,MongoClient
 
 
@@ -20,11 +20,12 @@ col = db['vuln']
 class Insert(Resource):
     def post(self):
 
-        return "Inserto_datos_en_bbdd"
+        args = parser.parse_args()
+        return print(args)
     def get(self):
         #col.insert({"prueba":"ok"})
-        content = request.get_json(silent=True)
-        return print(content)
+        args = parser.parse_args()
+        return print(args)
 
 
 
