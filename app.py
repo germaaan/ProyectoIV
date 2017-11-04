@@ -31,7 +31,7 @@ class Insert(Resource):
 
         #id = colection.insert(d)
 
-        return {"datos":data}
+        return dataDict
 
     def get(self):
         #col.insert({"prueba":"ok"})
