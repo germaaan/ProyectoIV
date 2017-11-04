@@ -32,8 +32,8 @@ class Insert(Resource):
 #Manejador de busqueda en BBDD
 class Search(Resource):
     def post(self, servicio,version):
-        query = colection.find({"products": servicio})
-        return dumps(query)
+        query = colection.find({"product": servicio})
+        return loads(query)
 
 
 #Manejador de actualizar la bbdd
