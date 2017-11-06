@@ -20,15 +20,15 @@ Para este proyecto utilizaré el paas de Heroku, en los que para poder desplegar
 
 1. Dar de alta en la web de [Heroku](https://dashboard.heroku.com/login)
 2. Instalar toolbelt de Heroku
-      wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
+    wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
 3. Iniciamos sesión en heroku
-      heroku login
+    heroku login
 4. Creamos el fichero runtime.txt, indicando la versión de python ejecutará la aplicación.
 5. Creamos el fichero Procfile, donde indicamos como arranca nuestra aplicación.
 6. Creamos la aplicación de Heroku
-      heroku create
+    heroku create
 7. Añadimos la base de datos mongoDB de mlab a la aplicación anterior.
 8. Subimos la aplicación a Heroku
-      git push heroku master
+    git push heroku master
 
 Despliegue https://frozen-everglades-36730.herokuapp.com/
