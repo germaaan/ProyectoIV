@@ -40,11 +40,11 @@ class Insert(Resource):
 class Search(Resource):
     def post(self, servicio,version):
         query = colection.find({'products.product':servicio,'products.version':version})
-        print type(dumps(query))
+        print(type(dumps(query)))
         return dumps(query)
     def get(self, servicio,version):
         query = colection.find({'products.product':servicio,'products.version':version})
-        print type(dumps(query))
+        print(type(dumps(query)))
         return dumps(query)
 
 
