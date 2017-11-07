@@ -1,7 +1,7 @@
 #!flask/bin/python3
 # -*- coding: utf-8 -*-
 
-from flask import Flask,request,jsonify
+from flask import Flask,request,jsonify,response
 from flask_restful import Resource,Api,reqparse,request
 from flask_pymongo import PyMongo,MongoClient
 import json
@@ -40,10 +40,16 @@ class Insert(Resource):
 class Search(Resource):
     def post(self, servicio,version):
         query = colection.find({'products.product':servicio,'products.version':version})
-        return dumps(query)
+
+
+        resp = Response(response=dumps(query),status=200,mimetype="application/json")
+        return resp
+
     def get(self, servicio,version):
         query = colection.find({'products.product':servicio,'products.version':version})
-        return dumps(query)
+
+        resp = Response(response=dumps(query),status=200,mimetype="application/json")
+        return resp
 
 
 #Manejador de actualizar la bbdd
