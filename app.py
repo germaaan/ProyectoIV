@@ -42,13 +42,13 @@ class Search(Resource):
         query = colection.find({'products.product':servicio,'products.version':version})
 
 
-        resp = Response(response=dumps(query),status=200,mimetype="application/json")
+        resp = Response(response=jsonify(dumps(query)),status=200,mimetype="application/json")
         return resp
 
     def get(self, servicio,version):
         query = colection.find({'products.product':servicio,'products.version':version})
 
-        resp = Response(response=dumps(query),status=200,mimetype="application/json")
+        resp = Response(response=jsonify(dumps(query)),status=200,mimetype="application/json")
         return resp
 
 
