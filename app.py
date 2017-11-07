@@ -13,7 +13,7 @@ app = Flask(__name__)
 api = Api(app)
 
 
-uri = "mongodb://<user>:<pass>@ds145370.mlab.com:45370/heroku_skjh356f"
+uri = "mongodb://usuario:password@ds145370.mlab.com:45370/heroku_skjh356f"
 client = MongoClient(uri)
 db = client.heroku_skjh356f
 colection = db['vuln']
@@ -27,11 +27,20 @@ class Insert(Resource):
         colection.insert(loads(data))
 
         return loads(data)
+    def get(self):
+
+        data = request.data
+        colection.insert(loads(data))
+
+        return loads(data)
 
 
 #Manejador de busqueda en BBDD
 class Search(Resource):
     def post(self, servicio,version):
+        query = colection.find({'products.product':servicio,'products.version':version})
+        return dumps(query)
+    def get(self, servicio,version):
         query = colection.find({'products.product':servicio,'products.version':version})
         return dumps(query)
 
