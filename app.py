@@ -7,6 +7,7 @@ from flask_pymongo import PyMongo,MongoClient
 import json
 from bson.json_util import loads
 from bson.json_util import dumps
+from bson import json_util
 
 
 app = Flask(__name__)
