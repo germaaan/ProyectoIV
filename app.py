@@ -61,11 +61,9 @@ class Update(Resource):
 #Manejador de actualizar la bbdd
 class Test(Resource):
     def post(self):
-        resp = Response(response={"status":"OK"},status=200,mimetype="application/json")
-        return resp
+        return jsonify({"status":"OK"})
     def get(self):
-        resp = Response(response={"status":"OK"},status=200,mimetype="application/json")
-        return resp
+        return {"status":"OK"}
 
 
 
