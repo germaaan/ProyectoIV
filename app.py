@@ -67,11 +67,21 @@ class Test(Resource):
 
 
 
+#Manejador de actualizar la bbdd
+class LastUpdate(Resource):
+    def post(self):
+        data = request.data
+        #colection.insert(loads(data))
+        return {'date': data['date']}
+    def get(self):
+        return {"status":"OK"}
+
 
 
 api.add_resource(Search, '/api/search/<string:servicio>/<string:version>')
 api.add_resource(Insert, '/api/insert')
 api.add_resource(Update, '/api/update')
+api.add_resource(LastUpdate, '/api/lastupdate')
 api.add_resource(Test, '/')
 
 if __name__ == '__main__':
