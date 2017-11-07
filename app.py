@@ -75,7 +75,8 @@ class LastUpdate(Resource):
         #last.update({},{'date': data['date']},{'upsert': 'true'})
 
         data = request.data
-        return {'date': data}
+        print(data)
+        return {'date': 'asd'}
 
     def get(self):
         #query = last.find({})
