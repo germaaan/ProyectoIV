@@ -39,10 +39,10 @@ class Insert(Resource):
 class Search(Resource):
     def post(self, servicio,version):
         query = colection.find({'products.product':servicio,'products.version':version})
-        return json.dumps(dumps(query))
+        return json.dumps(query,default=json_util.default)
     def get(self, servicio,version):
         query = colection.find({'products.product':servicio,'products.version':version})
-        return json.dumps(dumps(query))
+        return json.dumps(query,default=json_util.default)
 
 
 #Manejador de actualizar la bbdd
