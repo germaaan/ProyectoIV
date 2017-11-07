@@ -40,10 +40,10 @@ class Insert(Resource):
 class Search(Resource):
     def post(self, servicio,version):
         query = colection.find({'products.product':servicio,'products.version':version})
-        return dumps(query).replace('i', '"')
+        return dumps(query).replace('\"', '"')
     def get(self, servicio,version):
         query = colection.find({'products.product':servicio,'products.version':version})
-        return dumps(query).replace('i', '"')
+        return dumps(query).replace('\"', '"')
 
 
 #Manejador de actualizar la bbdd
