@@ -76,7 +76,7 @@ class LastUpdate(Resource):
 
         data = request.data
         print(data)
-        return {'date': 'asd'}
+        return {'date': data['date']}
 
     def get(self):
         #query = last.find({})
