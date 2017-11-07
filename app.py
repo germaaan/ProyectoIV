@@ -40,20 +40,10 @@ class Insert(Resource):
 class Search(Resource):
     def post(self, servicio,version):
         query = colection.find({'products.product':servicio,'products.version':version})
-        json_docs = []
-        for doc in query:
-            json_doc = json.dumps(doc, default=json_util.default)
-            json_docs.append(json_doc)
-
-        return json_doc
+        return JSONEncoder().encode(query)
     def get(self, servicio,version):
         query = colection.find({'products.product':servicio,'products.version':version})
-        json_docs = []
-        for doc in query:
-            json_doc = json.dumps(doc, default=json_util.default)
-            json_docs.append(json_doc)
-
-        return json_doc
+        return JSONEncoder().encode(query)
 
 
 #Manejador de actualizar la bbdd
