@@ -18,6 +18,8 @@ uri = "mongodb://usuario:password@ds145370.mlab.com:45370/heroku_skjh356f"
 client = MongoClient(uri)
 db = client.heroku_skjh356f
 colection = db['vuln']
+last = db['last-update']
+
 
 
 #Manejador de insertar datos en la bbdd
@@ -70,11 +72,15 @@ class Test(Resource):
 #Manejador de actualizar la bbdd
 class LastUpdate(Resource):
     def post(self):
+        #last.update({},{'date': data['date']},{'upsert': 'true'})
+
         data = request.data
-        #colection.insert(loads(data))
         return {'date': data['date']}
+
     def get(self):
-        return {"status":"OK"}
+        #query = last.find({})
+        #resp = Response(response=dumps(query),status=200,mimetype="application/json")
+        return resp
 
 
 
