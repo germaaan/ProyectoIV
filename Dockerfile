@@ -16,5 +16,5 @@ RUN apt-get install -y git
 RUN git clone https://github.com/ainokila/ProyectoIV
 # Instalación de las dependecncias del proyecto
 RUN pip install -r ProyectoIV/requirements.txt
-EXPOSE 8000
+EXPOSE 80
 CMD cd ProyectoIV && python3 app.py
