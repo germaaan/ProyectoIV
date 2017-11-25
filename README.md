@@ -39,3 +39,20 @@ Para este proyecto utilizaré el paas de Heroku, en los que para poder desplegar
     `git push heroku master`
 
 Despliegue https://frozen-everglades-36730.herokuapp.com/
+
+
+
+## Despliegue en contenedor
+
+1. Darse de alta en zeit
+2. Instalar now
+3. Subir el proyecto con el Dockerfile
+
+También para reducir el proceso y se puede realizar con
+
+	docker pull ainokila/iv
+
+De esta manera ya se podrá desplegar el contenedor personalizado.
+
+Contenedor: https://proyectoiv-rkuypdqhfx.now.sh
+
