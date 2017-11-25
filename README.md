@@ -52,6 +52,8 @@ También para reducir el proceso y se puede realizar con
 
 	docker pull ainokila/iv
 
+https://hub.docker.com/r/ainokila/proyectoiv/~/dockerfile/
+
 De esta manera ya se podrá desplegar el contenedor personalizado.
 
 Contenedor: https://proyectoiv-rkuypdqhfx.now.sh
