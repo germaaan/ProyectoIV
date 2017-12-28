@@ -3,7 +3,7 @@
 
 from flask import Flask,request,jsonify,Response
 from flask_restful import Resource,Api,reqparse,request
-#from flask_pymongo import PyMongo,MongoClient
+from flask_pymongo import PyMongo,MongoClient
 import json
 from bson.json_util import loads
 from bson.json_util import dumps
@@ -14,11 +14,11 @@ app = Flask(__name__)
 api = Api(app)
 
 
-#uri = "mongodb://usuario:password@ds145370.mlab.com:45370/heroku_skjh356f"
-#client = MongoClient(uri)
-#db = client.heroku_skjh356f
-#colection = db['vuln']
-#last = db['last-update']
+uri = "mongodb://usuario:password@ds145370.mlab.com:45370/heroku_skjh356f"
+client = MongoClient(uri)
+db = client.heroku_skjh356f
+colection = db['vuln']
+last = db['last-update']
 
 
 
@@ -26,39 +26,32 @@ api = Api(app)
 class Insert(Resource):
     def post(self):
 
-        #data = request.data
-        #colection.insert(loads(data))
+        data = request.data
+        colection.insert(loads(data))
 
-        #return loads(data)
-        return {"Status":"OK"}
-
+        return loads(data)
     def get(self):
 
-        #data = request.data
-        #colection.insert(loads(data))
+        data = request.data
+        colection.insert(loads(data))
 
-        #return loads(data)
-        return {"Status":"OK"}
+        return loads(data)
 
 
 #Manejador de busqueda en BBDD
 class Search(Resource):
     def post(self, servicio,version):
-        #query = colection.find({'products.product':servicio,'products.version':version})
+        query = colection.find({'products.product':servicio,'products.version':version})
 
 
-        #resp = Response(response=dumps(query),status=200,mimetype="application/json")
-        #return resp
-        return {"Status":"OK"}
-
+        resp = Response(response=dumps(query),status=200,mimetype="application/json")
+        return resp
 
     def get(self, servicio,version):
-        #query = colection.find({'products.product':servicio,'products.version':version})
+        query = colection.find({'products.product':servicio,'products.version':version})
 
-        #resp = Response(response=dumps(query),status=200,mimetype="application/json")
-        #return resp
-        return {"Status":"OK"}
-
+        resp = Response(response=dumps(query),status=200,mimetype="application/json")
+        return resp
 
 
 #Manejador de actualizar la bbdd
@@ -74,13 +67,6 @@ class Test(Resource):
     def get(self):
         return {"status":"OK"}
 
-#Manejador de actualizar la bbdd
-class Status(Resource):
-    def post(self):
-        return jsonify({"status":"OK"})
-    def get(self):
-        return {"status":"OK"}
-
 
 
 #Manejador de actualizar la bbdd
@@ -88,27 +74,22 @@ class LastUpdate(Resource):
     def post(self):
         #last.update({},{'date': data['date']},{'upsert': 'true'})
 
-        #data = request.data
-        #print(data)
-        #return {'date': data['date']
-        return {"Status":"OK"}
-
+        data = request.data
+        print(data)
+        return {'date': data['date']}
 
     def get(self):
         #query = last.find({})
         #resp = Response(response=dumps(query),status=200,mimetype="application/json")
-        #return resp
-        return {"Status":"OK"}
+        return resp
+
+
 
 api.add_resource(Search, '/api/search/<string:servicio>/<string:version>')
 api.add_resource(Insert, '/api/insert')
 api.add_resource(Update, '/api/update')
 api.add_resource(LastUpdate, '/api/lastupdate')
 api.add_resource(Test, '/')
-api.add_resource(Status, '/status')
-
 
 if __name__ == '__main__':
-    #app.run(debug=True)
-    app.run(host='0.0.0.0', port=80)
-
+    app.run(debug=True)
