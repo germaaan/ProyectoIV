@@ -23,10 +23,11 @@ Vagrant.configure('2') do |config|
     azure.resource_group_name= "recursosiv"
 
     #Identificación servicio en Azure
-    azure.tenant_id = 'c46110f5-71b3-4046-9bbf-fe08d2da884c'
-    azure.client_id = '7f70283b-6fe7-4680-8373-9b4a352508c8'
-    azure.client_secret = 'b40808e0-0c1d-4391-9140-56e0b9c4236e'
-    azure.subscription_id = '3f568057-e917-40ca-9241-c76259749d53'    
+    azure.tenant_id = ENV['AZURE_TENANT_ID']
+    azure.client_id = ENV['AZURE_CLIENT_ID']
+    azure.client_secret = ENV['AZURE_CLIENT_SECRET']
+    azure.subscription_id = ENV['AZURE_SUBSCRIPTION_ID']
+   
   end
 
   config.vm.provision "ansible" do |ansible|
