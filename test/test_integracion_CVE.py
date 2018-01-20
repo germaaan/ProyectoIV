@@ -16,13 +16,13 @@ def test_not_valid():
 	return r.status_code == 404
 
 class TestTravisCVE(unittest.TestCase):
-    def test_valid_cve(self):
+	def test_valid_cve(self):
 		self.assertTrue(test_cve())
 
-    def test_up_api(self):
+	def test_up_api(self):
 		self.assertTrue(test_is_up())
 
-    def test_not_valid(self):
+	def test_not_valid(self):
 		self.assertTrue(test_not_valid())
 
 
