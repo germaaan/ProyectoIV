@@ -58,3 +58,14 @@ De esta manera ya se podrá desplegar el contenedor personalizado.
 
 Contenedor: https://proyectoiv-rkuypdqhfx.now.sh
 
+
+## Despliegue en maquina virtual - Azure
+
+1. Darse de alta usando el cupón proporcionado por el profesor.
+2. Obtener las claves para poder acceder a traves de keys.
+3. Utilizar las claves anteriores para establecer comunicacion a través de Vagrant.
+4. Despligue y ejecución con:
+
+	sh install-and-run.sh
+
+Despliegue final: http://basecve.westeurope.cloudapp.azure.com:8080/
