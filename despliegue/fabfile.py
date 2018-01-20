@@ -19,4 +19,4 @@ def removecve():
 	run('sudo rm -rf ./ProyectoIV')
 
 def startcve():
-	run('cd ~/ProyectoIV/ && python3 app.py &')
+	run('cd ~/ProyectoIV/ && gunicorn app:app --log-file=- &')
