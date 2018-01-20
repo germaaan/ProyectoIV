@@ -17,7 +17,7 @@ def test_not_valid():
 
 class TestTravisCVE(unittest.TestCase):
     def testCVE(self):
-        self.assertTrue(test_cve())
+		self.assertTrue(test_cve())
 		self.assertTrue(test_is_up())
 		self.assertTrue(test_not_valid())
 
