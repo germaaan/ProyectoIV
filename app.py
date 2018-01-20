@@ -76,4 +76,4 @@ api.add_resource(Update, '/api/update')
 api.add_resource(Test, '/')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=80)
