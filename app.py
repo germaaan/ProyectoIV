@@ -14,11 +14,21 @@ app = Flask(__name__)
 api = Api(app)
 
 
+
 uri = "mongodb://usuario:password@ds145370.mlab.com:45370/heroku_skjh356f"
 client = MongoClient(uri)
 db = client.heroku_skjh356f
 colection = db['vuln']
-last = db['last-update']
+#last = db['last-update']
+
+#uri = "mongodb://user:pass@localhost:27017/"
+#client = MongoClient(uri)
+
+
+#db = client['aplication']
+
+#colection = db.posts
+#last = db.users
 
 
 
@@ -30,22 +40,10 @@ class Insert(Resource):
         colection.insert(loads(data))
 
         return loads(data)
-    def get(self):
-
-        data = request.data
-        colection.insert(loads(data))
-
-        return loads(data)
 
 
 #Manejador de busqueda en BBDD
 class Search(Resource):
-    def post(self, servicio,version):
-        query = colection.find({'products.product':servicio,'products.version':version})
-
-
-        resp = Response(response=dumps(query),status=200,mimetype="application/json")
-        return resp
 
     def get(self, servicio,version):
         query = colection.find({'products.product':servicio,'products.version':version})
@@ -69,26 +67,12 @@ class Test(Resource):
 
 
 
-#Manejador de actualizar la bbdd
-class LastUpdate(Resource):
-    def post(self):
-        #last.update({},{'date': data['date']},{'upsert': 'true'})
-
-        data = request.data
-        print(data)
-        return {'date': data['date']}
-
-    def get(self):
-        #query = last.find({})
-        #resp = Response(response=dumps(query),status=200,mimetype="application/json")
-        return resp
 
 
 
 api.add_resource(Search, '/api/search/<string:servicio>/<string:version>')
 api.add_resource(Insert, '/api/insert')
 api.add_resource(Update, '/api/update')
-api.add_resource(LastUpdate, '/api/lastupdate')
 api.add_resource(Test, '/')
 
 if __name__ == '__main__':
