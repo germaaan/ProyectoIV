@@ -23,7 +23,6 @@ Vagrant.configure('2') do |config|
     azure.resource_group_name= "recursosiv"
 
     #Identificación servicio en Azure
-
     azure.tenant_id = 'c46110f5-71b3-4046-9bbf-fe08d2da884c'
     azure.client_id = '7f70283b-6fe7-4680-8373-9b4a352508c8'
     azure.client_secret = 'b40808e0-0c1d-4391-9140-56e0b9c4236e'
