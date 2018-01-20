@@ -68,4 +68,4 @@ Contenedor: https://proyectoiv-rkuypdqhfx.now.sh
 
 	sh install-and-run.sh
 
-Despliegue final: http://basecve.westeurope.cloudapp.azure.com:8080/
+Despliegue final: http://basecve.westeurope.cloudapp.azure.com
