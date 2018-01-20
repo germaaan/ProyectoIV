@@ -66,15 +66,15 @@ Contenedor: https://proyectoiv-rkuypdqhfx.now.sh
 3. Exportar las claves a nuestro ordenador para que se puedan utilizar a través de Vagrant.
 3. Crear la maquina virtual y provisionarla con ansible usando:
 
-	vagrant up --provider=azure
+	`vagrant up --provider=azure`
 
 4. Si queremos que todo el proceso se haga de manera automatica debemos usar:
 
 
-	vagrant up --provider=azure
-	fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com removecve
-	fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com installcve
-	fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com startcve
+	`vagrant up --provider=azure`
+	`fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com removecve`
+	`fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com installcve`
+	`fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com startcve`
 
 5. Después de esperar ya tendremos nuestro sistema funcionando en produción.
 
