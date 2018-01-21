@@ -44,18 +44,6 @@ Despliegue https://frozen-everglades-36730.herokuapp.com/
 
 ## Despliegue en contenedor
 
-### Configuración para el despliegue en produción
-
-Al salir del ambito de desarrollo, no podemos seguir utilizando la aplicación en modo debug, ya que si lo dejamos activado, podriamos ser vulnerables. Por tanto 
-al desactivar el modo de debug, necesitamos que una aplicación haga de servidor y se comunique con nuestra aplicación, mas o menos esta sería su arquitectura:
-
-![Disenio](img/estructura.png)
-
-En mi caso, he utilizago gunicorn es un WSGI (Web Server Gateway Interface), su función principal es recibir las peticiones en el puerto que le indiquemos, y pasarselas a nuestra aplicación a modo de proxy.
-
-Otra opcion disponible, era utilizar nginx ( en mi caso, he utilizado nginx en el despliegue de DAI), pero como en este caso no quería servir contenido estático, opte por gunicorn.
-
-
 ### Proceso para desplegar la aplicación.
 
 1. Darse de alta en zeit
@@ -73,7 +61,26 @@ De esta manera ya se podrá desplegar el contenedor personalizado.
 Contenedor: https://proyectoiv-rkuypdqhfx.now.sh
 
 
-## Despliegue en maquina virtual - Azure
+
+
+
+## Hito 5 - Azure
+
+### Configuración para el despliegue en produción
+
+Al salir del ambito de desarrollo, no podemos seguir utilizando la aplicación en modo debug, ya que si lo dejamos activado, podriamos ser vulnerables. Por tanto 
+al desactivar el modo de debug, necesitamos que una aplicación haga de servidor y se comunique con nuestra aplicación, mas o menos esta sería su arquitectura:
+
+![Disenio](img/estructura.png)
+
+En mi caso, he utilizago gunicorn es un WSGI (Web Server Gateway Interface), su función principal es recibir las peticiones en el puerto que le indiquemos, y pasarselas a nuestra aplicación a modo de proxy.
+
+Otra opcion disponible, era utilizar nginx ( en mi caso, he utilizado nginx en el despliegue de DAI), pero como en este caso no quería servir contenido estático, opte por gunicorn.
+
+
+
+### Despliegue en maquina virtual - Azure
+
 
 1. Darse de alta usando el cupón proporcionado por el profesor.
 2. Instalar el plugin de azure para Vagrant.
