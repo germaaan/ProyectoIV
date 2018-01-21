@@ -50,7 +50,7 @@ Despliegue https://frozen-everglades-36730.herokuapp.com/
 
 También para reducir el proceso y se puede realizar con
 
-    docker pull ainokila/iv
+		docker pull ainokila/iv
 
 https://hub.docker.com/r/ainokila/proyectoiv/~/dockerfile/
 
@@ -66,18 +66,41 @@ Contenedor: https://proyectoiv-rkuypdqhfx.now.sh
 3. Exportar las claves a nuestro ordenador para que se puedan utilizar a través de Vagrant.
 3. Crear la maquina virtual y provisionarla con ansible usando:
 
-    vagrant up --provider=azure
+		vagrant up --provider=azure
 
 4. Si queremos que todo el proceso se haga de manera automatica debemos usar:
 
-    vagrant up --provider=azure
-
-    fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com removecve
-
-    fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com installcve
-
-  	fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com startcve
+		vagrant up --provider=azure
+		fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com removecve
+		fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com installcve
+		fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com startcve
 
 5. Después de esperar ya tendremos nuestro sistema funcionando en produción.
+6. Para automatizar el proceso he creado un script que realiza todo lo anterior.
+7. También si queremos matar el proceso del servidor podemos utilizar:
+
+		fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com stop_cve
 
 Despliegue final: basecve.westeurope.cloudapp.azure.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
