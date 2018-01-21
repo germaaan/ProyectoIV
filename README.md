@@ -66,6 +66,16 @@ Contenedor: https://proyectoiv-rkuypdqhfx.now.sh
 
 ## Hito 5 - Azure
 
+### Proyecto
+
+Este proyecto formará parte de un sistema para analizar ordenadores y obtener las vulnerabilidades que presenta, asi como sus exploit. Actualmente en esta asignatura he desarrollado la parte que se encarga de tener la api para poder buscar los CVE por producto y versión, asi luego que puedan ser utilizado para buscar los exploits indicados.
+
+![Disenio_actual](img/actual.png)
+
+El diseño del proyecto final sería:
+
+![Disenio_actual](img/proyecto.png)
+
 ### Configuración para el despliegue en produción - ¡IMPORTANTE!
 
 Al salir del ambito de desarrollo, no podemos seguir utilizando la aplicación en modo debug, ya que si lo dejamos activado, podriamos ser vulnerables. Por tanto 
