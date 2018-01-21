@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from fabric.api import sudo, cd, env, run, shell_env
+from fabric.api import sudo,run
 import os
 
 
