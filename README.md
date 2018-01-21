@@ -110,7 +110,7 @@ Contenedor: https://proyectoiv-rkuypdqhfx.now.sh
 
 		fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com stop_cve
 
-Despliegue final: basecve.westeurope.cloudapp.azure.com
+Despliegue final: http://basecve.westeurope.cloudapp.azure.com
 
 
 
