@@ -1,5 +1,3 @@
-# coding: utf-8
-
 from fabric.api import sudo,run
 import os
 
