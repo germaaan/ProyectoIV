@@ -11,6 +11,10 @@ def installcve():
 def removecve():
 	run('sudo rm -rf ./ProyectoIV')
 
+#Para mi aplicacion
+def stop_cve():
+	run('sudo netstat -lpn | grep :80 | kill') 
+
 #Arranca gunicorn indicandole la ruta de mi app y el puerto, se pone con sudo ya que si el puerto es menor de 1024, siempre usa sudo.
 def startcve():
 	run('cd ~/ProyectoIV/ && sudo gunicorn -b 0.0.0.0:80 app:app --log-file=- &')
