@@ -62,22 +62,51 @@ Contenedor: https://proyectoiv-rkuypdqhfx.now.sh
 ## Despliegue en maquina virtual - Azure
 
 1. Darse de alta usando el cupón proporcionado por el profesor.
-2. Obtener las claves para poder acceder a traves de keys.
-3. Exportar las claves a nuestro ordenador para que se puedan utilizar a través de Vagrant.
-3. Crear la maquina virtual y provisionarla con ansible usando:
+2. Instalar el plugin de azure para Vagrant.
+
+		vagrant plugin install vagrant-azure
+
+3. Instalar el cliente de azure para terminal.
+
+		echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \ sudo tee /etc/apt/sources.list.d/azure-cli.list
+		sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
+		sudo apt-get install apt-transport-https
+		sudo apt-get update && sudo apt-get install azure-cli
+
+4. Loguearnos en azure con:
+
+		azure login
+
+
+5. Obtener las claves a traves del azure-cli para poder acceder a traves de Vagrant a Azure.
+
+		az ad sp create-for-rbac
+
+6. Obtendremos las claves en formato json.
+
+		{
+		  "appId": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+		  "displayName": "some-display-name",
+		  "name": "http://azure-cli-2017-04-03-15-30-52",
+		  "password": "XXXXXXXXXXXXXXXXXXXX",
+		  "tenant": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+		}
+
+7. Exportar las claves anteriores a nuestro ordenador para que se puedan utilizar a través de Vagrant.
+8. Crear la maquina virtual y provisionarla con ansible usando:
 
 		vagrant up --provider=azure
 
-4. Si queremos que todo el proceso se haga de manera automatica debemos usar:
+9. Si queremos que todo el proceso se haga de manera automatica debemos usar:
 
 		vagrant up --provider=azure
 		fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com removecve
 		fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com installcve
 		fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com startcve
 
-5. Después de esperar ya tendremos nuestro sistema funcionando en produción.
-6. Para automatizar el proceso he creado un script que realiza todo lo anterior.
-7. También si queremos matar el proceso del servidor podemos utilizar:
+10. Después de esperar ya tendremos nuestro sistema funcionando en produción.
+11. Para automatizar el proceso he creado un script que realiza todo lo anterior.
+12. También si queremos matar el proceso del servidor podemos utilizar:
 
 		fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com stop_cve
 
