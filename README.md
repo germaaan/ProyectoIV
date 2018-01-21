@@ -106,6 +106,11 @@ Contenedor: https://proyectoiv-rkuypdqhfx.now.sh
 
 10. Después de esperar ya tendremos nuestro sistema funcionando en produción.
 11. Para automatizar el proceso he creado un script que realiza todo lo anterior.
+
+		sh ./provision/install-and-run.sh
+
+En caso de que la maquina virtual ya este configurada, se actualizará y ejecutará el inicio de la aplicación a través de fabric.
+
 12. También si queremos matar el proceso del servidor podemos utilizar:
 
 		fab -f ./despliegue/fabfile.py -H vagrant@basecve.westeurope.cloudapp.azure.com stop_cve
