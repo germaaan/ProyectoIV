@@ -66,7 +66,7 @@ Contenedor: https://proyectoiv-rkuypdqhfx.now.sh
 
 ## Hito 5 - Azure
 
-### Configuración para el despliegue en produción
+### Configuración para el despliegue en produción - ¡IMPORTANTE!
 
 Al salir del ambito de desarrollo, no podemos seguir utilizando la aplicación en modo debug, ya que si lo dejamos activado, podriamos ser vulnerables. Por tanto 
 al desactivar el modo de debug, necesitamos que una aplicación haga de servidor y se comunique con nuestra aplicación, mas o menos esta sería su arquitectura:
